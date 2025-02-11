@@ -25,7 +25,7 @@
     /// <summary>
     /// Represents a circle derived from Shape.
     /// </summary>
-    class Circle : Shape
+    class Circle : Shape, IDrawable
     {
         // Auto-implemented property
         public double Radius { get; set; }
@@ -34,10 +34,10 @@
         /// Constructor for Circle.
         /// </summary>
         /// <param name="radius"></param>
-        public Circle()
+        public Circle(double radius)
         {
             Name = "Circle";
-            Radius = Radius;
+            Radius = radius;
         }
 
         /// <summary>
@@ -48,11 +48,19 @@
             // returns the area of the circle
             return Math.PI * Radius * Radius;
         }
+
+        /// <summary>
+        /// Implements Draw() method for a circle.
+        /// </summary>
+        public void Draw()
+        {
+            Console.WriteLine("Drawing a circle.");
+        }
     }
     /// <summary>
     /// Represeents a rectangle dervied from Shape.
     /// </summary>
-    class Rectangle : Shape
+    class Rectangle : Shape, IDrawable
     {
         // Auto-implemented properties
         public double Width { get; set; }
@@ -77,6 +85,25 @@
         {
             return Width * Height;  
         }
+
+        /// <summary>
+        /// Implements Draw() method for a rectangle
+        /// </summary>
+        public void Draw()
+        {
+            Console.WriteLine("Drawing a rectangle.");
+        }
+    }
+
+    /// <summary>
+    /// Defines a contract for drawable objects.
+    /// </summary>
+    interface IDrawable
+    {
+        /// <summary>
+        /// Draws the object
+        /// </summary>
+        void Draw();
     }
     internal class Program
     {
