@@ -21,6 +21,63 @@
             Console.WriteLine($"Shape: {Name}");
         }
     }
+
+    /// <summary>
+    /// Represents a circle derived from Shape.
+    /// </summary>
+    class Circle : Shape
+    {
+        // Auto-implemented property
+        public double Radius { get; set; }
+
+        /// <summary>
+        /// Constructor for Circle.
+        /// </summary>
+        /// <param name="radius"></param>
+        public Circle()
+        {
+            Name = "Circle";
+            Radius = Radius;
+        }
+
+        /// <summary>
+        /// Calculates the area of the circle.
+        /// </summary>
+        public override double CalculateArea()
+        {
+            // returns the area of the circle
+            return Math.PI * Radius * Radius;
+        }
+    }
+    /// <summary>
+    /// Represeents a rectangle dervied from Shape.
+    /// </summary>
+    class Rectangle : Shape
+    {
+        // Auto-implemented properties
+        public double Width { get; set; }
+        public double Height { get; set; }
+        
+        /// <summary>
+        /// Constructor for Rectangle.
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        public Rectangle(double width, double height)
+        {
+            Name = "Rectangle";
+            Width = width;
+            Height = height;
+        }
+
+        /// <summary>
+        /// Calculates the area of the rectangle
+        /// </summary>
+        public override double CalculateArea()
+        {
+            return Width * Height;  
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
